@@ -39,7 +39,7 @@ public class ApplicationHooks {
     @After(order=1)
     public void teardown(Scenario sc){
         if(sc.isFailed()){
-            //taking screenshot
+            //taking screenshots
             String screenshotName = sc.getName().replaceAll(" ","_");
             byte [] sourcePath = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
             sc.attach(sourcePath,"image/png", screenshotName);

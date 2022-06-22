@@ -13,9 +13,13 @@ public class config_reader {
         try {
             FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
             prop.load(ip);
-        } catch (IOException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+          catch (IOException e) {
+              e.printStackTrace();
+            }
+
         return prop;
     }
 }
