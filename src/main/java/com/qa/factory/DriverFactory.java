@@ -10,9 +10,9 @@ public class DriverFactory {
 
     public WebDriver driver;
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
-    public WebDriver init_driver(String Browser) {
+    public WebDriver init_driver(String browser) {
         System.out.println("Browser value is: " + browser);
-        if(broser.equals("chrome")){
+        if(browser.equals("chrome")){
             WebDriverManager.chromedriver().setup();
             tlDriver.set(new ChromeDriver());
         }
